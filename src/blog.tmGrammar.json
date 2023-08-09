@@ -1,0 +1,60 @@
+{
+  "scopeName": "text.html.blog",
+  "fileTypes": ["html"],
+  "patterns": [
+    {
+      "begin": "(</?)(box:parent_category|view:path_from_root|box:category_page|view:pages|box:post_flags|view:post_flags|box:ads|view:ads|box:most_commented_posts|view:most_commented_posts|box:blog_info|box:authors|view:authors|box:popular_posts|view:popular_posts|box:recent_posts|view:recent_posts|box:recent_comments|view:recent_comments|box:most_visited_posts|view:most_visited_posts|head:style|head:script|head:meta|view:category_children|box:post_rating|view:post_list|box:post_list|view:post_detail|box:post_detail|view:page_detail|box:page_detail|view:categories|box:categories|view:tag_cloud|box:tag_cloud|view:links|box:links|view:daily_links|box:daily_links|view:archive|box:archive|view:menu|box:menu|view:stat|box:stat|view:messages|box:messages|view:pagination|box:pagination|view:post_comments|box:post_comments|view:post_categories|box:post_categories|view:post_tags|box:post_tags|view:page_comments|box:page_comments|check:if)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.start.blog"
+        },
+        "2": {
+          "name2": "keyword.control.blog",
+          "name": "variable.parameter.blog"
+        }
+      },
+      "end": "((?: ?/)?>)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.end.blog"
+        }
+      },
+      "patterns": [
+        {
+          "include": "text.html.basic#attribute"
+        }
+      ],
+      "name2": "punctuation.definition.tag.begin.blog",
+      "name": "variable.parameter.blog"
+    },
+    {
+      "begin": "(\\(\\*)(follow_box|search_form|post_author_id|menu_id|parent_category|now|post_seq_num|category_path|post_views|post_visits|viewing_first|viewing_last|viewing_odd|viewing_even|viewing_odd_even|viewing_index|viewing_count|viewing_rindex|comment_reply_date|comment_reply_text|comment_reply_fullname|comment_reply_avatar|_bayan_blog_links|_blog_footer|page_num|page_current|flag_id|flag_name|flag_link|flag_selected|flag_post_count|flag_slug|post_image|author_selected|post_pinned|index_selected|index_page1_selected|tag_selected|post_selected|menu_item_selected|archive_selected|ad|template_based_on|comment_body_text|copyright_notice|author_name|author_link|author_post_count|page_prev|page_first|page_next|page_last|stat_value|stat_title|down_rates|up_rates|down_rates_count|up_rates_count|user_rated_down|user_rated_up|rate_down_link|rate_up_link|user_rated|blog_description|blog_image|blog_link|blog_short_description|blog_title|category_post_count|category_link|category_name|category_id|category_selected|comment_avatar|comment_body|comment_date|comment_email|comment_fullname|comment_reply|comment_website|comment_add_form|link_alt|link_count|link_name|link_url|menu_item_link|menu_item_title|message|message_type|page_comment_count|page_content|page_link|page_has_send_comment|page_title|post_author|post_author_avatar|post_comment_count|post_full_content|post_date|post_has_read_more|post_has_comments_section|page_has_comments_section|post_link|post_has_send_comment|post_summary|post_title|post_id|comment_link|comment_id|page_id|post_list_title|rss_link|tag_post_count|tag_is_first|tag_link|tag_name|tag_id|tag_size)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.block"
+        },
+        "2": {
+          "name": "variable.parameter.blog"
+        }
+      },
+      "end": "(\\*\\))",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.block"
+        }
+      },
+      "patterns": [
+        {
+          "include": "text.html.basic#attribute"
+        }
+      ],
+      "name": "variable.parameter.blog"
+    },
+    {
+      "match": "(\\(\\*)(\\w[^\\s>]*)",
+      "end": "\\*\\)",
+      "name": "invalid"
+    },
+    { "include": "text.html.basic" }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "scopeName": "text.html.hugo",
+  "name": "Hugo",
+  "fileTypes": [
+    "html"
+  ],
+  "foldingStartMarker": "({{(.*)range(.*)}})|({{(.*)if(.*))",
+  "foldingStopMarker": "({{(.*)end(.*)}})",
+  "patterns": [
+    {
+      "include": "text.html.basic"
+    },
+    {
+      "include": "source.markdown"
+    },
+    {
+      "begin": "{{<|{{%",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.hugo"
+        }
+      },
+      "end": ">}}|%}}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.hugo"
+        }
+      },
+      "patterns": [
+        {
+          "match": "\\b([^\\s^\\\"]+)\\b",
+          "name": "support.function.hugo"
+        }
+      ]
+    },
+    {
+      "begin": "{{\\/\\*|{{- \\/\\*",
+      "end": "\\*\\/}}|\\*\\/ -}}",
+      "name": "comment.block.hugo"
+    },
+    {
+      "begin": "{{-|{{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.hugo"
+        }
+      },
+      "end": "}}|-}}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.hugo"
+        }
+      },
+      "patterns": [
+        {
+          "match": "\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+)|(true|false|nil))\\b",
+          "name": "constant.numeric.hugo"
+        },
+        {
+          "match": "\\b(block|define|else|end|if|partial|partialCached|range|template|where|with)\\b",
+          "name": "keyword.control.hugo"
+        },
+        {
+          "name": "support.function.builtin.gotemplate",
+          "match": "\\b(and|call|eq|ge|gt|html|index|js|le|len|lt|ne|not|or|print|printf|println|urlquery)\\b"
+        },
+        {
+          "begin": "\\$\\.",
+          "end": "\\s",
+          "name": "support.function.builtin.hugo"
+        },
+        {
+          "match": "[.$][\\w]*",
+          "name": "variable.hugo"
+        },
+        {
+          "match": ":=",
+          "name": "keyword.operator.initialize.hugo"
+        },
+        {
+          "match": "\\b(absLangURL|absURL|add|after|anchorize|append|apply|base64Decode|base64Encode|chomp|complement|cond|countrunes|countwords|dateFormat|default|delimit|dict|div|echoParam|emojify|errorf|fileExists|findRE|first|float|getenv|group|hasPrefix|highlight|htmlEscape|htmlUnescape|hugo.BuildDate|hugo.CommitHash|hugo.Environment|hugo.Generator|hugo.IsProduction|hugo.Version|humanize|i18n|imageConfig|in|int|intersect|isset|jsonify|lang.Merge|lang.NumFmt|last|lower|markdownify|math.Ceil|math.Floor|math.Log|math.Round|math.Sqrt|md5|merge|mod|modBool|mul|now|os.Stat|path.Base|path.Dir|path.Ext|path.Join|path.Split|plainify|pluralize|querify|readDir|readFile|ref|reflect.IsMap|reflect.IsSlice|relLangURL|relURL|relref|replace|replaceRE|safeCSS|safeHTML|safeHTMLAttr|safeJS|safeURL|seq|sha1|sha256|shuffle|singularize|slice|slicestr|sort|split|string|strings.HasSuffix|strings.Repeat|strings.RuneCount|strings.TrimLeft|strings.TrimPrefix|strings.TrimRight|strings.TrimSuffix|sub|substr|symdiff|templates.Exists|time|title|transform.Unmarshal|trim|truncate|union|uniq|upper|urlize|urls.Parse|warnf)\\b",
+          "name": "support.function.builtin.hugo"
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.hugo"
+        },
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.single.hugo"
+        }
+      ]
+    },
+    {
+      "begin": "\\+\\+\\+",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.hugo"
+        }
+      },
+      "end": "\\+\\+\\+",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.hugo"
+        }
+      },
+      "patterns": [
+        {
+          "match": "\\b([^\\s^\\\"]+)\\b",
+          "name": "constant.character.hugo"
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.hugo"
+        },
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.single.hugo"
+        },
+        {
+          "begin": "`",
+          "end": "`",
+          "name": "string.quoted.single.hugo"
+        }
+      ]
+    }
+  ]
+}

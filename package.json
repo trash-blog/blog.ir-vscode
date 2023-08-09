@@ -1,0 +1,47 @@
+{
+  "name": "blogir-theme-vscode",
+  "displayName": "Blog.ir theme Support",
+  "description": "Blog.ir snippets and syntax highlighting for VS Code",
+  "version": "0.0.1",
+  "publisher": "mimv",
+  "repository": "https://github.com/mimvahedi/vscode-blog.ir",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "html",
+        "extensions": [
+          ".html",
+          ".htm"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "html",
+        "scopeName": "text.html.blog",
+        "path": "./src/blog.tmGrammar.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./src/snippets.json"
+      }
+    ]
+  },
+  "scripts": {},
+  "devDependencies": {
+    "@types/vscode": "^1.73.0"
+  }
+}

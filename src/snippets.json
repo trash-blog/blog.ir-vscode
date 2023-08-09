@@ -1,0 +1,91 @@
+{
+  "*": {
+    "prefix": ["*","(*","**"],
+    "scope": "html",
+    "body": [
+      "(*$1*)$0"
+    ],
+    "description": "(*TAG_NAME*)"
+  },
+  "head:style": {
+    "prefix": "head:style",
+    "scope": "html",
+    "body": [
+      "<head:style></head:style>"
+    ],
+    "description": "<head:style>"
+  },
+  "head:script": {
+    "prefix": "head:script",
+    "scope": "html",
+    "body": [
+      "<head:script></head:script>"
+    ],
+    "description": "<head:script>"
+  },
+  "head:meta": {
+    "prefix": "head:meta",
+    "scope": "html",
+    "body": [
+      "<head:meta></head:meta>"
+    ],
+    "description": "<head:meta>"
+  },
+  "head:all": {
+    "prefix": ["head","head:all"],
+    "scope": "html",
+    "body": [
+      "<head:meta></head:meta>",
+      "<head:style></head:style>",
+      "<head:script></head:script>"
+    ],
+    "description": "<head:meta>"
+  },
+  "box": {
+    "prefix": "box",
+    "scope": "html",
+    "body": [
+      "<box:${1:blog_title} ${2}>",
+      "\t<view:${1:blog_title}>",
+      "\t\t$0",
+      "\t</view:${1:blog_title}>",
+      "</box:${1:blog_title}>"
+    ],
+    "description": "<box:xyz>"
+  },
+  "view": {
+    "prefix": "view",
+    "scope": "html",
+    "body": ["<view:${1:blog_title}>", "\t$0", "</view:${1:blog_title}>"],
+    "description": "<view:xyz>"
+  },
+  "checkif": {
+    "prefix": ["check:if", "check", "if"],
+    "scope": "html",
+    "body": ["<check:if ${1:blog_title}>", "\t$0", "</check:if>"],
+    "description": " <check:if>"
+  },
+  "checknot": {
+    "prefix": "not",
+    "scope": "html",
+    "body": [
+      "<check:if not ${1:blog_title}>",
+      "\t$0",
+      "</check:if>"
+    ],
+    "description": " <check:if not>"
+  },
+  "checkifnot": {
+    "prefix": "ifnot",
+    "scope": "html",
+    "body": [
+      "<check:if ${1:blog_title}>",
+      "\t$0",
+      "</check:if>",
+      "<check:if not ${1:blog_title}>",
+      "\t",
+      "</check:if>"
+    ],
+    "description": " <check:if><check:if not>"
+  }
+}
