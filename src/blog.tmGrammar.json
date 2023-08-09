@@ -51,8 +51,8 @@
       "name": "variable.parameter.blog"
     },
     {
-      "match": "(\\(\\*)(\\w[^\\s>]*)",
-      "end": "\\*\\)",
+      "begin": "(\\(\\*)",
+      "end": "(\\*\\))",
       "name": "invalid"
     },
     { "include": "text.html.basic" }
